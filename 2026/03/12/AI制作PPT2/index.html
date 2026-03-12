@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AI制作PPT--基于html语言 | w.w技术专栏</title>
+  <title>AI制作PPT--基于html语言--案例分享 | w.w技术专栏</title>
   <meta name="keywords" content=" AI , PPT ">
-  <meta name="description" content="AI制作PPT--基于html语言 | w.w技术专栏">
+  <meta name="description" content="AI制作PPT--基于html语言--案例分享 | w.w技术专栏">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="继上次分享过使用html语言制作PPT演示文稿后，又看到许多许多博主分享这方面的经验。此次案例分享加入了一些新的风格提示词。 工具IDE：VS code + claude code 大模型：minimax的coding plan，模型是2.5 新加效果的提示词：  毛玻璃卡片（glass-card）：background: rgba(255,255,255,0.7) + backdrop-fil">
 <meta property="og:type" content="article">
@@ -486,9 +486,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-AI制作PPT" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-AI制作PPT2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AI制作PPT--基于html语言</h1>
+        <h1 class="article-title">AI制作PPT--基于html语言--案例分享</h1>
     
     <div class="article-meta">
         
@@ -515,7 +515,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-03-09 09:06:19'>2026-01-01 08:00</time>
+            发布时间 : <time class="date" title='最后更新: 2026-03-12 11:58:37'>2026-03-12 10:55</time>
         
     </div>
     <div class="article-meta">
@@ -548,7 +548,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-text">效果</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -564,21 +564,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>AI在办公领域的应用层出不穷，在数据处理，文章写作，格式排版等方面都已日趋成熟。但是在制作PPT的探索中，一直没有什么亮点。原因在于PPT演讲是根据人的思维进行排布，具有很强的主观性，另外AI从文字中提炼中表格，辅以图片佐证等能力还不成熟，即使可以生成技术路线图等，但如何协同文字排版又成为另一个难点。</p>
-<p> 从一开始出场的一句话生成PPT到后面Gemini推出的图片式生成，经历了不少的探索，大致可概括为模版填充式，到前端语言式再到图片生成式。</p>
-<p>模版填充式，即事先将一些PPT制作成模版，将PPT中标题，副标题，小标题，正文，开始页，目录页，过渡页，尾页等元素标注出来，存成json或者其他格式等。当用户输入主题或者提供材料后，AI会搜索主题或者分析材料，提炼出大纲等，讲这些内容填入事先准备的占位符。目前市面上很多的AIPPT，基本是这种格式。这种方式的好处是排版结果美观，内容不会错乱，对于有固定模版的公司或者组织等很友好。但缺点也是显而易见的，前期模版标注需要大量时间，并且需要准备很多同类型页面，比如多张过渡页或者目录页。如果只准备单张过渡页页，最后AI生成的PPT，都会使用同一种过渡页。此外，没办法处理表格。</p>
-<p>图片生成式PPT是谷歌推出Gemini 2.5 Flash Image后，网络上开始大肆宣传。当时看到宣传效果后，确实被惊艳到。但之后尝试了几次后，才发现并没有表面的那么光鲜。首先就是修改问题，每页PPT都是图片，想要修改内容，只能AI问答式。后面出了一些图片转PPT的解决方法，但感觉入不敷出，耗费太多人力物力。其实，生成的中文不友好，很多都是乱码。最后，这些生图大模型价格比较昂贵，还需要外网环境才能使用，这就阻挡了很多人的使用步伐。目前国内推出了不少生图模型，价格比较低，但是效果不太好，还需观望。</p>
-<p>最后再说一下html形式，采用前端语言进行PPT创作，格式灵活，可使用SVG图标，图表，以及各种鼠标交互等。当然缺点也有，适用场合有限。更适合内部技术分享，交流等，不太适合公开场合的答辩，宣讲等。这种制作方式还需要一定的技术基础。</p>
-<p>最后，我们这里做了一个html格式的PPT尝试，用到的工具是claude code，内置minimax模型和一个相关的skill。skill是另外一个技术博主开源的项目，参见<a href="https://www.bilibili.com/video/BV1THfhB1E3d/?vd_source=6c2ce50a9654762b76823814b4557349#reply292194442593">你的下一个PPT，何必是PPT——本地模型+OpenCode&#x2F;ClaudeCode+SKILL的幻灯片自动化流程_哔哩哔哩_bilibili</a>。使用的参考文档是AI生成“AI赋能乡村振兴”的大纲文件，里面涵盖不少数据。</p>
-<p>下面是两张结果展示，分别是首页和其中的内容页。</p>
-<p><img src="/../images/PPThtml1.png" alt="PPThtml1"></p>
-<p><img src="/../images/ppthtml2.png" alt="ppthtml2"></p>
-<p>怎么样，看起来是不是效果还可以。首页大标题、小标题以及下面的图标，都正确表示了想要表达的内容。接下里的展望与实施建议，都取自文档中的内容，基本都做到有理有据。</p>
-<p>但接下来的效果页却出现了很多问题，如下：</p>
-<p><img src="/../images/html3.png" alt="html3"></p>
-<p><img src="/../images/html4.png" alt="html4"></p>
-<p>首先就是图三中的表格太紧凑，导致字体太小，影响展示，跟下方的空白格格不入。又比如图四中的金字塔结构，最下方那条明显不符合常理。如果知道一些前端语言，自己可以去指定页进行修改。我尝试直接跟AI对话修改这些瑕疵位置，结果很不好。AI回答知道了这些修改点，但是修改后的内容依然没有改进，其实图四已经告诉AI修改金字塔最下面的构造了，但还是同样的结果。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>基于html制作PPT是一个不错的方向，结合目前大火的skills，可以碰撞出颇具潜力的想法。尤其是skills的灵活性，每个人都可以根据自己的使用场景，定制属于自己的skills。但是目前还无法处理图片，另外每页的要点有点多，需要按需精简。目前GLM也在支持这种方式生成PPT，并且借助他们大模型的搜图能力，可以给不同的页面进行配图加蒙版等等，感兴趣的可以查阅体验。总之，基于html制作PPT，是一个不错的技术路线，不妨看看自己的场景是不是可以接入。</p>
+        <p> 继上次分享过使用html语言制作PPT演示文稿后，又看到许多许多博主分享这方面的经验。此次案例分享加入了一些新的风格提示词。</p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p><font color='red'>IDE：</font>VS code + claude code</p>
+<p><font color='red'>大模型：</font>minimax的coding plan，模型是2.5</p>
+<p><font color='red'>新加效果的提示词：</font></p>
+<ol>
+<li><strong>毛玻璃卡片</strong>（glass-card）：<code>background: rgba(255,255,255,0.7)</code> + <code>backdrop-filter: blur(12px)</code> + 半透明边框</li>
+<li><strong>光晕背景</strong>（glow-bg）：绝对定位的大圆形色块，<code>filter: blur(100px)</code>，半透明，营造氛围感</li>
+<li><strong>网格底纹</strong>：用 <code>linear-gradient</code> 画 40px 间距的浅色网格线作为全局背景</li>
+<li><strong>颜色渐变横幅</strong>：页面底部的结论性文字用渐变色或强调色的圆角大卡片承载</li>
+</ol>
+<p><font color='red'>大纲内容：</font>通过kimi大模型，调研的2025年6月到2026年3月AI发展趋势</p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/../images/PPT%E6%A1%88%E4%BE%8B1-1.png"></p>
+<p> <img src="/../images/PPT%E6%A1%88%E4%BE%8B1-2.png"></p>
+<p><img src="/../images/PPT%E6%A1%88%E4%BE%8B1-3.png"></p>
+<p><img src="/../images/PPT%E6%A1%88%E4%BE%8B1-4.png"></p>
+<p>截图中可能不太清楚，每页PPT加入了网格背景，表格页显示也基本完整。整体效果基本可用，没有需要修改的排版问题。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
