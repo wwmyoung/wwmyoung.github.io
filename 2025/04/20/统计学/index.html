@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AI制作PPT--基于html语言--案例分享 | w.w技术专栏</title>
-  <meta name="keywords" content=" AI , PPT ">
-  <meta name="description" content="AI制作PPT--基于html语言--案例分享 | w.w技术专栏">
+  <title>统计学中假设检验 | w.w技术专栏</title>
+  <meta name="keywords" content=" 统计学 ">
+  <meta name="description" content="统计学中假设检验 | w.w技术专栏">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="继上次分享过使用html语言制作PPT演示文稿后，又看到许多许多博主分享这方面的经验。此次案例分享加入了一些新的风格提示词。 工具IDE：VS code + claude code 大模型：minimax的coding plan，模型是2.5 新加效果的提示词：  毛玻璃卡片（glass-card）：background: rgba(255,255,255,0.7) + backdrop-fil">
 <meta property="og:type" content="article">
@@ -514,9 +514,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-AI制作PPT2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-统计学" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AI制作PPT--基于html语言--案例分享</h1>
+        <h1 class="article-title">统计学中假设检验</h1>
     
     <div class="article-meta">
         
@@ -526,7 +526,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="PPT">PPT</a>
+            <a  data-rel="数学">数学</a>
             
         </span>
         
@@ -534,16 +534,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">AI</a>
-            
-            <a class="color4">PPT</a>
+            <a class="color4">统计学</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-03-12 11:58:37'>2026-03-12 10:55</time>
+            发布时间 : <time class="date" title='最后更新: 2026-03-18 14:58:58'>2025-04-20 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -576,7 +574,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-text">效果</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E4%B8%AD%E6%98%93%E6%B7%B7%E7%82%B9"><span class="toc-text">假设检验中易混点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%88%E8%A7%A3%E9%87%8A%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89"><span class="toc-text">先解释一些定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%E6%B3%A8%E6%84%8F%E8%A6%81%E7%82%B9"><span class="toc-text">置信区间注意要点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="toc-text">假设检验结果的解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%A0%87%E5%87%86%E5%8C%96%EF%BC%88Z-score%EF%BC%89"><span class="toc-text">1. 标准化（Z-score）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97%E6%A6%82%E7%8E%87"><span class="toc-text">2. 计算概率</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%9F%A5%E8%A1%A8%E6%88%96%E8%AE%A1%E7%AE%97"><span class="toc-text">3. 查表或计算</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -592,22 +590,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 继上次分享过使用html语言制作PPT演示文稿后，又看到许多许多博主分享这方面的经验。此次案例分享加入了一些新的风格提示词。</p>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p><font color='red'>IDE：</font>VS code + claude code</p>
-<p><font color='red'>大模型：</font>minimax的coding plan，模型是2.5</p>
-<p><font color='red'>新加效果的提示词：</font></p>
-<ol>
-<li><strong>毛玻璃卡片</strong>（glass-card）：<code>background: rgba(255,255,255,0.7)</code> + <code>backdrop-filter: blur(12px)</code> + 半透明边框</li>
-<li><strong>光晕背景</strong>（glow-bg）：绝对定位的大圆形色块，<code>filter: blur(100px)</code>，半透明，营造氛围感</li>
-<li><strong>网格底纹</strong>：用 <code>linear-gradient</code> 画 40px 间距的浅色网格线作为全局背景</li>
-<li><strong>颜色渐变横幅</strong>：页面底部的结论性文字用渐变色或强调色的圆角大卡片承载</li>
+        <p>参数估计和假设检验是统计推断的两个组成部分，他们都是利用样本对总体进行某种推断，但推断的角度不同。参数估计讨论的是用样本统计量估计总体参数的方法。比如对于总体参数$u$，在参数估计中是未知的，而在假设检验中，则是先对$u$的值提出一个假设，然后利用样本信息去检验这个假设是否成立。</p>
+<p>在实际应用中，关于参数估计和假设检验有许多易混点，这里解释其中几个比较重要的。</p>
+<h2 id="假设检验中易混点"><a href="#假设检验中易混点" class="headerlink" title="假设检验中易混点"></a>假设检验中易混点</h2><h4 id="先解释一些定义"><a href="#先解释一些定义" class="headerlink" title="先解释一些定义"></a><font color='green'>先解释一些定义</font></h4><p><font color='blue'><strong>点估计（point estimate）</strong></font>就是使用用样本统计量$\hat{\theta}$的某个取值直接作为总体参数$\theta$的估计值。比如使用样本均值直接作为总体均值的估计值，样本方差作为总体方差的估计值。</p>
+<p><font color='blue'><strong>区间估计（interval estimate）</strong></font>是在点估计的基础上，给出总体参数估计的一个区间范围，该区间通常由样本统计量加减估计误差得到。与点估计不同，进行区间估计时，根据样本统计量的抽样分布可以对样本统计量与总体参数的接近程度给出一个概率度量。下面以总体均值的区间估计为例来说明区间估计的基本原理。</p>
+<p>由样本均值的抽样的抽样分布可知，在重复抽样或无限总体抽样的情况下，样本均值的数学期望等于总体均值，即$E(\overline x)&#x3D;u$。样本均值$\overline x$落在总体均值$u$的两侧各为1个标准差范围内的概率为0.6827，落在2个标准差范围内的概率为0.9545，落在3个标准差范围内的概率为0.9973。（计算说明见文章最后）</p>
+<p>实际上可以求出样本均值$\overline x$落在总体均值$u$的两侧任何一个标准差范围的概率。但在实际估计时，情况恰好相反。$\overline x$是已知的，而$u$是未知的，也是要估计的。由于$\overline x$与$u$的距离是对称的，如果某个样本的平均值落在$u$的2两个标准差范围内，反过来，$u$也就被包含在以$\overline x$为中心左右2个标准差的范围之内（文后有另一种对此的解释）。因此约有95%的样本均值会落在$u$的2个标准差的范围之内。也就是说，约有95%的样本均值所构造的2个标准区间会包含$u$。通俗地说，如果抽取100个样本来估计总体均值，由100个样本所构造的100个区间中，约有95个区间包含总体均值，另外5个区间不好寒总体均值。</p>
+<p>在区间估计中，由样本统计量所构造的总体参数的估计区间称为<font color='blue'><strong>置信区间（confidence interval）</strong></font>。其中，区间的最小值称为置信下限，最大值称为置信上限。由于统计学家在某种程度上确信这个区间会包含真正的总体参数，所以给它取名置信区间。比如抽取100个样本，根据每一个样本构造一个置信区间，这100个置信区间中有95%的区间包含总体参数的<font color='red'>真值</font>，有5%没有包含，则95%这个值称为置信水平。一般地，如果将构造置信区间的步骤重复多次，置信区间中包含总体参数真值的次数所占的比例称为<font color='blue'><strong>置信水平（confidence level）</strong></font>，也成为置信度或者置信系数。在构造置信区间时，可以用所希望的任意值作为置信水平。</p>
+<p><font color='blue'><strong>显著性水平（confidence level）</strong></font>，它是一个专有名词，在假设检验中，它的含义是当原假设正确时却被拒绝的概率或风险，即犯弃真错误的概率，它是人们根据检验的要求确定的。</p>
+<h3 id="置信区间注意要点"><a href="#置信区间注意要点" class="headerlink" title="置信区间注意要点"></a><font color='green'>置信区间注意要点</font></h3><ol>
+<li><p>如果用某种方法构造的所有区间中，有95%的区间包含总体参数的真值，5%的区间不包含，那么，用该方法构造的区间称为置信水平95%的置信区间。同样其他置信水平的区间也可用类似的方式进行表述。</p>
+</li>
+<li><p>总体参数的真值是固定的、未知的，而用样本构造的区间则是不固定的。若抽取不同的样本，可以得到不同的区间。从这个意义上说，置信区间是一个随机区间，它会因为样本的不同而不同，而且不是所有的区间都包含总体参数得到真值。一个置信区间就像是为捕获未知参数而撒出去的网，不是所有撒网的地点都能捕获到参数。</p>
+</li>
+<li><p>在实际问题中，进行估计时往往只抽取一个样本。此时所构造的是与该样本相联系的一定置信水平（比如95%）下的置信区间。由于用该样本所构造的区间是一个特定的区间，而不再是随机区间，所以无法知道这个样本所产生的区间是否包含总体参数的真值。我们只能希望这个区间是大量包含总体参数真值区间中的一个，但它也可能是少数几个不包含参数真值的区间中的一个。</p>
+<p>比如从一个总体中抽取20个随机样本，得到总体均值$u$的20个区间估计，如下图。图中每个区间中间的点表示$u$的点估计值，即样本均值$\overline x$。可以看出20个区间中只有第8个区间没有包含总体均值$u$。如果这是95%的置信区间，那么只有5%的区间没有包含$u$。</p>
+<p><img src="/..%5Cimages%5C%E7%BB%9F%E8%AE%A1%E5%AD%A6-%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A13.png"></p>
+<p>讲一个详细的例子说明这个问题。比如我们用95%置信水平得到某班级学生考试成绩的置信区间为60<del>80分，我们不能说60</del>80分这个区间以95%的概率包含全班学生平均考试的真值，或者说全班学生的平均考试成绩以95%的概率落在60~80分之间，这类表述是错误的。因为总体均值$u$是一个常数，而不是一个随机变量。$u$要么落在这个范围内，不在不在这个范围内，这里并不涉及概率。我们只是知道，在多次抽样中有95%的样本得到的区间包含全班学生平均考试成绩的真值。它的真正意义是如果做了100次抽样，大概有95次找到的区间包含真值，有5次找到的区间不包含真值。因此这个概率不是用来描述某个特定区间包含总体真值的可能性，而是针对随机区间而言的。</p>
+</li>
 </ol>
-<p><font color='red'>大纲内容：</font>通过kimi大模型，调研的2025年6月到2026年3月AI发展趋势</p>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/../images/PPT%E6%A1%88%E4%BE%8B1-1.png"></p>
-<p> <img src="/../images/PPT%E6%A1%88%E4%BE%8B1-2.png"></p>
-<p><img src="/../images/PPT%E6%A1%88%E4%BE%8B1-3.png"></p>
-<p><img src="/../images/PPT%E6%A1%88%E4%BE%8B1-4.png"></p>
-<p>截图中可能不太清楚，每页PPT加入了网格背景，表格页显示也基本完整。整体效果基本可用，没有需要修改的排版问题。</p>
+<h2 id="假设检验结果的解释"><a href="#假设检验结果的解释" class="headerlink" title="假设检验结果的解释"></a>假设检验结果的解释</h2><p>在假设检验中，我们采用的是拒绝原假设$H_0$的方式达到检验的目的。事实上，原假设是对总体分布的某个未知特征的一种猜测，我们并不清楚这个猜测是否正确。但在选择$\alpha$作为显著性的标准时，却是在$H_0$为真的前提下进行的。意思是，正常情况下事件结果应该与原假设$H_0$相差不大，如果发生了与$H_0$不一致的概率水平小于显著水平$\alpha$的事件，则拒绝$H_0$，否则不拒绝。</p>
+<p>这种反证的特点，保证了犯第$\mathrm{I}$类错误的概率不超过$\alpha$，即错误的拒绝$H_0$的概率不超过$\alpha$，但无法提供有关犯第$\mathrm{II}$类错误的信息，即不知道错误的接受$H_0$的概率。因此，对于显著性水平$\alpha$的检验准则而言，如果出现拒绝$H_0$的结果，我们可以说“结论$H_1$为真出错的概率不超过$\alpha$”。</p>
+<p>从假设检验的原理看，不拒绝原假设意味着我们所构造的与原假设相矛盾的小概率事件没有发生，但可能会有许多其他与原假设相矛盾的小概率事件，我们没有也无法证实所有这些小概率事件不会发生（比如原假设是：生产线运行正常，产品合格。随机抽取10个样品的尺寸发现都在标准之内。但我们没有检验样品内部是否有裂纹，使用寿命等）。因此，把假设检验中出现接受$H_0$的结果解释为“没有发现充足的证据拒绝$H_0$”，或更严格的解释为“在显著性水平$\alpha$下没有发现充足的证据拒绝$H_0$”，而不是“接受原假设$H_0$”。因为我们无法证明原假设是真的。</p>
+<h4 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h4><ol>
+<li><p>计算样本均值落在总体均值两个标准差范围内的概率是<strong>0.9545</strong>．这里假设总体标准差已知，未知情况下使用ｔ-score即可，过程类似。</p>
+<h5 id="1-标准化（Z-score）"><a href="#1-标准化（Z-score）" class="headerlink" title="1. 标准化（Z-score）"></a>1. 标准化（Z-score）</h5><p>设总体均值为 $\mu$，总体标准差为 $\sigma$，样本均值为 $\bar{X}$。</p>
+<p>我们需要计算：<br>$$P(\mu - 2\sigma \leq \bar{X} \leq \mu + 2\sigma)$$</p>
+<p>将其标准化为 Z 分数：<br>$$Z &#x3D; \frac{\bar{X} - \mu}{\sigma}$$</p>
+<p>当 $\bar{X} &#x3D; \mu + 2\sigma$ 时，$Z &#x3D; 2$<br>当 $\bar{X} &#x3D; \mu - 2\sigma$ 时，$Z &#x3D; -2$</p>
+<h5 id="2-计算概率"><a href="#2-计算概率" class="headerlink" title="2. 计算概率"></a>2. 计算概率</h5><p>$$P(-2 \leq Z \leq 2) &#x3D; \Phi(2) - \Phi(-2)$$</p>
+<p>其中 $\Phi(z)$ 是标准正态分布的累积分布函数。</p>
+<h5 id="3-查表或计算"><a href="#3-查表或计算" class="headerlink" title="3. 查表或计算"></a>3. 查表或计算</h5><ul>
+<li>$\Phi(2) \approx 0.97725$（Z&#x3D;2 左侧的面积）</li>
+<li>$\Phi(-2) \approx 0.02275$（Z&#x3D;-2 左侧的面积）</li>
+</ul>
+<p>因此：<br>$$P(-2 \leq Z \leq 2) &#x3D; 0.97725 - 0.02275 &#x3D; 0.9545$$</p>
+</li>
+<li><p>关于如果某个样本的平均值落在$u$的2两个标准差范围内，反过来，$u$也就被包含在以$\overline x$为中心左右2个标准差的范围之内的另一种解释。如下图：因为置信区间的宽度和接受域的宽度是一回事。所以只要抽样均值落在接受域内，则构造出来的置信区间，必然包含总体均值$u$。而只要抽样均值落在接受域外，也就是落在拒绝域，则构造出来的置信区间必然不包含总体均值$u$。若想要进一步了解相关知识，推荐B站陈老师课程：<a href="https://www.bilibili.com/video/BV1h3411M78m/?spm_id_from=333.1007.top_right_bar_window_history.content.click">https://www.bilibili.com/video/BV1h3411M78m/?spm_id_from=333.1007.top_right_bar_window_history.content.click</a></p>
+<p><img src="/..%5Cimages%5C%E7%BB%9F%E8%AE%A1%E5%AD%A6-%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A11.png"></p>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
